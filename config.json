@@ -1,0 +1,32 @@
+{
+  "_comment": "===== MODEL CONFIGURATION =====",
+  "data": "mnist",
+  "model_type": "cnn",
+
+  "_comment": "===== TRAINING CONFIGURATION =====",
+  "random_seed": 0,
+  "max_num_training_steps": 6000,
+  "num_output_steps": 600,
+  "num_summary_steps": 600,
+  "num_checkpoint_steps": 600,
+  "training_batch_size": 100,
+  "step_size_schedule": [[0, 0.001], [3000, 0.0001]],
+
+  "_comment": "===== EVAL CONFIGURATION =====",
+  "num_eval_examples": 100,
+  "eval_batch_size": 100,
+  "eval_on_cpu": false,
+
+  "_comment": "=====ADVERSARIAL EXAMPLES CONFIGURATION=====",
+
+  "_comment": "One of: '', 'MAX'",
+  "multi_attack_mode": "MAX",
+  "start_small": true,
+  "attacks": [
+    {"type": "linf", "epsilon": 0.3, "k": 10, "a": 0.01, "random_start": true},
+    {"type": "l2", "epsilon": 2, "k": 10, "a": 0.1, "random_start": true},
+    {"type": "l1", "epsilon": 10, "k": 10, "random_start": true, "perc": 99, "a":  1.0}
+  ],
+  "train_attacks": [0, 1, 2],
+  "eval_attacks": [0, 1, 2]
+}

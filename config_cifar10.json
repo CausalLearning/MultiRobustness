@@ -1,0 +1,36 @@
+{
+  "_comment": "===== MODEL CONFIGURATION =====",
+  "data": "cifar10",
+  "data_path": "cifar10_data",
+  "model_type": "cnn",
+  "filters": [16, 160, 320, 640],
+
+  "_comment": "===== TRAINING CONFIGURATION =====",
+  "random_seed": 0,
+  "max_num_training_steps": 80000,
+  "num_output_steps": 200,
+  "num_summary_steps": 5000,
+  "num_checkpoint_steps": 5000,
+  "training_batch_size": 128,
+  "step_size_schedule": [[0, 0.1], [40000, 0.01], [60000, 0.001]],
+  "weight_decay": 0.0002,
+  "momentum": 0.9,
+
+  "_comment": "===== EVAL CONFIGURATION =====",
+  "num_eval_examples": 1000,
+  "eval_batch_size": 100,
+  "eval_on_cpu": false,
+
+  "_comment": "=====ADVERSARIAL EXAMPLES CONFIGURATION=====",
+  "_comment": "One of: '', 'ALTERNATE', 'MAX', 'HALF_BATCH_HALF_LR'",
+  "multi_attack_mode": "MAX",
+  "attacks": [
+   {"type": "linf", "epsilon": 8.0, "k": 10, "random_start": true},
+   {"type": "l2", "epsilon": 80, "k": 40, "random_start": true},
+   {"type": "l1", "epsilon": 2000, "k": 100, "random_start": true, "perc": 99, "a": 2.0},
+   {"type": "RT", "spatial_limits": [3, 3, 30], "grid_granularity": [5, 5, 31], "random_tries": 10},
+   {"type": "RT", "spatial_limits": [3, 3, 30], "grid_granularity": [5, 5, 31], "random_tries": -1}
+  ],
+  "train_attacks": [0],
+  "eval_attacks": [0]
+}
