@@ -70,7 +70,7 @@ Pygments==2.3.1
 pyparsing==2.3.0
 python-dateutil==2.8.0
 pytz==2018.7
-PyYAML==5.1
+PyYAML==5.4
 pyzmq==17.1.2
 qtconsole==4.4.3
 randomgen==1.16.0
