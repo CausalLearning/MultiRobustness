@@ -28,7 +28,7 @@ h5py==2.8.0
 idna==2.8
 ipaddress==1.0.22
 ipykernel==4.10.0
-ipython==5.8.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 ipywidgets==7.4.2
 Jinja2==2.10
