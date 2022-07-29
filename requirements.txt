@@ -45,7 +45,7 @@ kiwisolver==1.0.1
 Markdown==3.0.1
 MarkupSafe==1.1.0
 matplotlib==2.2.3
-mistune==0.8.4
+mistune==2.0.3
 mmdnn==0.2.5
 mnist==0.2.2
 mock==2.0.0
