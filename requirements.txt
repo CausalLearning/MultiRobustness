@@ -5,7 +5,7 @@ backports.functools-lru-cache==1.5
 backports.shutil-get-terminal-size==1.0.0
 backports.weakref==1.0.post1
 bleach==3.1.0
-certifi==2018.11.29
+certifi==2022.12.7
 chardet==3.0.4
 cleverhans==3.0.1
 configparser==3.7.1
